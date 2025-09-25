@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Pocket Desk</title>
+  <meta name="description" content="Quick notes, to-dos, and links—right on your phone." />
+  <meta name="theme-color" content="#111827" />
+  <!-- iOS PWA bits -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pocket Desk">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Pocket Desk</h1>
+    <button id="installBtn" hidden>Install</button>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Quick Notes</h2>
+      <textarea id="notes" placeholder="Write anything…"></textarea>
+      <div class="row">
+        <button id="saveNotes">Save</button>
+        <span class="muted" id="notesSaved"></span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>To‑Dos</h2>
+      <div class="row">
+        <input id="todoInput" placeholder="Add a task and press +">
+        <button id="addTodo" aria-label="Add task">+</button>
+      </div>
+      <ul id="todoList" class="list"></ul>
+      <div class="row space-between">
+        <button id="clearDone">Clear completed</button>
+        <span class="muted" id="todoCount"></span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quick Links</h2>
+      <div class="row">
+        <input id="linkTitle" placeholder="Title">
+        <input id="linkURL" placeholder="https://example.com">
+        <button id="addLink">Add</button>
+      </div>
+      <ul id="linkList" class="list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>Works offline • Add to Home Screen for full‑screen app</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
